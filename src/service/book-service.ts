@@ -3,7 +3,7 @@ import { BookRepositorie } from "../repositories/book-repositorie";
 import { IBook } from "../types/book-interface";
 
 export class BookService {
-    async createBookService(book: IBook) {
+    async bookCreateService(book: IBook) {
         if (!book.title) {
             throw new Error('Dê um título para o seu livro')
         }
@@ -18,7 +18,7 @@ export class BookService {
         }
     }
 
-    async readBookService(bookTitle: string) {
+    async bookReadService(bookTitle: string) {
         
         const bookRepositorie = new BookRepositorie()
         const book = await bookRepositorie.findByTitle(bookTitle)
@@ -30,7 +30,7 @@ export class BookService {
         }
     }
 
-    async updateBookService(bookTitle: string, newBookTitle: string) {
+    async bookUpdateService(bookTitle: string, newBookTitle: string) {
         const bookRepositorie = new BookRepositorie()
         const book = await bookRepositorie.findByTitle(bookTitle)
 
@@ -42,7 +42,7 @@ export class BookService {
         }
     }
 
-    async deleteBookService(bookTitle: string) {
+    async bookDeleteService(bookTitle: string) {
         const bookRepositorie = new BookRepositorie()
         const book = await bookRepositorie.findByTitle(bookTitle)
 
@@ -54,7 +54,7 @@ export class BookService {
         }
     }
 
-    async readAllBooksService() {
+    async serviceReadAllBooks() {
         const bookRepositorie = new BookRepositorie()
         return await bookRepositorie.get()
     }

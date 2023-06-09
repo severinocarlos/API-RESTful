@@ -14,5 +14,5 @@ app.put('/book/:title', bookCrontoller.updateBook)
 
 
 app.listen(3333, () =>  {
-    console.log("🚀Server is running in http://localhost:3000")
+    console.log("🚀Server is running on http://localhost:3000")
 })
